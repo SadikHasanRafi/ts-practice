@@ -8,10 +8,24 @@ function functionName (parameter:parameterType) : returnType {
     else it will act as void (non return types) function
 }
 */
-//example
+//example of normal function
 function addNumber(num1, num2) {
     return num1 + num2;
 }
+//example of arrow function 
+const multiplyNumber = (num1, num2) => { return num1 * num2; };
+// without parameter function 
+const multiplyNumber1 = () => {
+    let num1 = 2, num2 = 3;
+    return num1 * num2;
+};
+//example of required parameter or optional parameter function 
+function subtractNumber(num1, num2, num3 = 10) {
+    return num1 - num2 - num3;
+}
+//calling the subtractNumber function
+const sub = subtractNumber(1, 2, 3);
+const sub2 = subtractNumber(1, 2);
 //normal variable declaration 
 //syntax
 /*
