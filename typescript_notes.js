@@ -26,6 +26,20 @@ function subtractNumber(num1, num2, num3 = 10) {
 //calling the subtractNumber function
 const sub = subtractNumber(1, 2, 3);
 const sub2 = subtractNumber(1, 2);
+//rest parameter or infinite number of parameter
+function add2(num1, num2, ...num3) {
+    return num1 + num2 + num3.reduce((a, b) => a + b, 0);
+}
+console.log(add2(2, 3, ...[1, 2, 3, 9, 4, 5, 6, 7]));
+console.log(add2(2, 3, 1, 2, 3, 9, 4, 5, 6, 7));
+//generic function
+function getItem(item) {
+    return new Array().concat(item);
+}
+let concatResult = getItem([1, 2, 3, 4]);
+console.log(concatResult);
+let concatString = getItem(["mew", "cow", "neko", "katzu"]);
+console.log(concatString);
 //normal variable declaration 
 //syntax
 /*

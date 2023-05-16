@@ -32,6 +32,28 @@ function subtractNumber (num1:number,num2:number, num3 = 10 ): number {
 const sub = subtractNumber(1,2,3);
 const sub2 = subtractNumber(1,2);
 
+//rest parameter or infinite number of parameter
+function add2(num1:number, num2:number, ...num3:number[]):number{  //here num3 is using spread operator and this parameter is array type array size is not defined which means it can take infinite amount of input in array formate 
+    return num1+num2+num3.reduce((a,b) => a+b ,0)
+}
+
+console.log(add2(2,3,...[1,2,3,9,4,5,6,7]))
+console.log(add2(2,3,1,2,3,9,4,5,6,7))
+
+
+//generic function
+function getItem<Type>(item:Type[]):Type[]{ //ei Type keyword ta ekhane array er element wise change hobe jodi ekhane array er element gula number hoi then number hobe type gula r jodi string hoi element type then ekhane type string hobe 
+    return new Array<Type>().concat(item);
+}
+
+let concatResult = getItem([1,2,3,4])
+console.log(concatResult)
+
+let concatString = getItem<string>(["mew","cow","neko","katzu"]); //ekhane j string likhsi er madhome chaile ekhane eta declear kora jai j ami ki type er return chaitisi
+console.log(concatString)
+
+
+
 
 //normal variable declaration 
 //syntax
